@@ -26,21 +26,9 @@ There's no traditional search bar. **Your agent IS the search engine.** Ask ques
 
 ## Install
 
-Just ask your OpenClaw agent:
+Tell your OpenClaw agent:
 
-> "Install the rexxie explorer skill"
-
-Or via ClawHub CLI:
-
-```bash
-clawhub install rexxie-explorer
-```
-
-Or manually — clone into your workspace skills folder:
-
-```bash
-git clone https://github.com/axiemaid/rexxie-explorer-skill.git ~/.openclaw/workspace/skills/rexxie-explorer
-```
+> "Install the Rexxie Explorer skill from https://github.com/axiemaid/rexxie-explorer-skill"
 
 ## What's Included
 
