@@ -83,8 +83,8 @@ Use the HTML template at `assets/template.html`. Replace `__DATA__` with a JSON 
 
 1. Read `assets/template.html`
 2. Replace `__DATA__` with your JSON (use `JSON.stringify`)
-3. Write to a temp file (e.g. workspace `rexxie-view.html`)
-4. Present via `canvas` action=present with the file URL, OR tell user to open in browser
+3. Write to a file in the workspace (e.g. `rexxie-view.html`)
+4. Tell the user to open the file in their browser, or provide the file path
 
 ### Token Efficiency
 
