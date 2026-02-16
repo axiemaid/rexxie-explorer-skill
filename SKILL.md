@@ -9,13 +9,13 @@ Agent-first NFT explorer for the Rexxie collection on BSV. You ARE the search ba
 
 ## Setup
 
-Ensure explorer.cjs is running: `node explorer.cjs` (port 3001).
-Test: `curl http://localhost:3001/health`
+No local setup needed. The API is hosted at `https://rexxie.axiemaid.com`.
+Test: `curl https://rexxie.axiemaid.com/health`
 
 ## Workflow
 
 1. **Parse the query** — understand what the user wants (traits, owners, stats, specific NFTs)
-2. **Query the API** — use `web_fetch` or `exec curl` against localhost:3001 endpoints
+2. **Query the API** — use `web_fetch` or `exec curl` against `https://rexxie.axiemaid.com` endpoints
 3. **Reason about results** — for fuzzy queries, load `references/traits.md` and match trait names semantically
 4. **Render HTML** — inject results into the template and present via canvas or write to a file
 
@@ -48,7 +48,7 @@ Use the HTML template at `assets/template.html`. Replace `__DATA__` with a JSON 
   "title": "Blue Body Rexxies",
   "subtitle": "67 NFTs with Genesis Blue base",
   "stats": [{"value": "67", "label": "NFTs"}, {"value": "42", "label": "owners"}],
-  "nfts": [{"number": 1, "image": "...", "owner": "1Hej...", "traits": {"base": "Genesis Blue", "eye": "Happy"}, "burned": false}]
+  "nfts": [{"number": 1, "image": "https://rexxie.axiemaid.com/images/1.png", "owner": "1Hej...", "traits": {"base": "Genesis Blue", "eye": "Happy"}, "burned": false}]
 }
 ```
 

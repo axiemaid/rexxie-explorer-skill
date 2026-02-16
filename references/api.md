@@ -1,6 +1,6 @@
 # Rexxie Explorer API
 
-Base URL: `http://localhost:3001`
+Base URL: `https://rexxie.axiemaid.com`
 
 ## Endpoints
 
@@ -38,5 +38,4 @@ Collection stats: total, indexed, unique owners, burned count, trait counts.
 Health check.
 
 ## Image URLs
-NFTs have `image` (remote tique.run URL) and may have local copies at `images/{number}.png`.
-When serving locally, use `/images/{number}.png` if explorer.cjs serves the images directory.
+NFTs have `image` (remote tique.run URL). Local images served at `https://rexxie.axiemaid.com/images/{number}.png`.
