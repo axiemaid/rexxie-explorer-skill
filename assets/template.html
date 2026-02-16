@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rexxie Explorer</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d0d0d;--card:#1a1a2e;--text:#e0e0e0;--dim:#888;--accent:#7b2ff7;--accent2:#f72f8e}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,system-ui,sans-serif;padding:20px;max-width:1400px;margin:0 auto}
+h1{font-size:1.4rem;margin-bottom:4px}
+.subtitle{color:var(--dim);font-size:.85rem;margin-bottom:20px}
+.stats{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.stat{background:var(--card);padding:10px 16px;border-radius:8px;font-size:.85rem}
+.stat b{color:var(--accent);font-size:1.1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.card{background:var(--card);border-radius:10px;overflow:hidden;transition:transform .15s}
+.card:hover{transform:translateY(-3px)}
+.card img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.card .info{padding:8px 10px}
+.card .num{font-weight:700;font-size:.9rem}
+.card .owner{font-size:.7rem;color:var(--dim);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.traits{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
+.trait{font-size:.65rem;background:#2a2a4a;padding:2px 6px;border-radius:4px;color:#ccc}
+.detail{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:20px}
+.detail img{width:280px;border-radius:12px}
+.detail-info{flex:1;min-width:250px}
+.detail-info h2{margin-bottom:8px}
+.detail-info .field{margin-bottom:6px;font-size:.85rem}
+.detail-info .field span{color:var(--dim)}
+.transfer{font-size:.8rem;padding:6px 0;border-bottom:1px solid #222}
+.transfer:last-child{border:none}
+.list-row{display:flex;align-items:center;gap:12px;padding:10px;background:var(--card);border-radius:8px;margin-bottom:6px}
+.list-row img{width:48px;height:48px;border-radius:6px}
+.list-row .meta{flex:1;font-size:.85rem}
+.list-row .meta .dim{color:var(--dim);font-size:.75rem}
+table{width:100%;border-collapse:collapse;font-size:.85rem;margin-bottom:20px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid #222}
+th{color:var(--accent);font-weight:600}
+.burned{opacity:.5}
+.burned::after{content:" 🔥";font-size:.7rem}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+// DATA is injected by the agent as a JSON object
+// Supported shapes:
+//   { view: "grid", title, subtitle, stats[], nfts[] }
+//   { view: "detail", nft: { number, image, owner, burned, traits{}, transfers[] } }
+//   { view: "list", title, subtitle, items: [{ label, value, extra? }] }
+//   { view: "table", title, subtitle, headers[], rows[][] }
+
+const DATA = __DATA__;
+
+const $ = document.getElementById('app');
+const esc = s => s ? String(s).replace(/</g,'&lt;') : '';
+const short = (s,n=10) => s ? s.slice(0,n)+'…'+s.slice(-4) : '';
+const wocLink = tx => `https://whatsonchain.com/tx/${tx}`;
+const imgSrc = nft => nft.localImage || nft.image || '';
+
+function renderGrid(d) {
+  let h = `<h1>${esc(d.title||'Rexxie Explorer')}</h1>`;
+  if(d.subtitle) h += `<p class="subtitle">${esc(d.subtitle)}</p>`;
+  if(d.stats?.length) h += `<div class="stats">${d.stats.map(s=>`<div class="stat"><b>${esc(s.value)}</b> ${esc(s.label)}</div>`).join('')}</div>`;
+  h += `<div class="grid">${(d.nfts||[]).map(n => {
+    const burned = n.burned ? ' burned' : '';
+    const traits = n.traits ? Object.entries(n.traits).map(([k,v])=>`<span class="trait">${esc(v)}</span>`).join('') : '';
+    return `<div class="card${burned}">
+      <img src="${esc(imgSrc(n))}" alt="Rexxie #${n.number}" loading="lazy">
+      <div class="info">
+        <div class="num">#${n.number}</div>
+        ${n.owner ? `<div class="owner">${esc(n.owner)}</div>` : ''}
+        ${traits ? `<div class="traits">${traits}</div>` : ''}
+      </div>
+    </div>`;
+  }).join('')}</div>`;
+  $.innerHTML = h;
+}
+
+function renderDetail(d) {
+  const n = d.nft;
+  const burned = n.burned ? ' 🔥 Burned' : '';
+  let h = `<div class="detail">
+    <img src="${esc(imgSrc(n))}" alt="Rexxie #${n.number}">
+    <div class="detail-info">
+      <h2>Rexxie #${n.number}${burned}</h2>
+      <div class="field"><span>Owner:</span> ${esc(n.owner)}</div>`;
+  if(n.traits) Object.entries(n.traits).forEach(([k,v]) => { h += `<div class="field"><span>${esc(k)}:</span> ${esc(v)}</div>`; });
+  if(n.mintTxid) h += `<div class="field"><span>Mint:</span> <a href="${wocLink(n.mintTxid)}" target="_blank">${short(n.mintTxid,12)}</a></div>`;
+  h += `</div></div>`;
+  if(n.transfers?.length) {
+    h += `<h3 style="margin-bottom:8px">Transfer History</h3>`;
+    n.transfers.forEach(t => {
+      h += `<div class="transfer">
+        <b>${esc(t.type)}</b> ${t.from ? 'from '+short(t.from,8) : ''} ${t.to ? '→ '+esc(t.to) : ''}
+        ${t.blockHeight ? `<span style="color:var(--dim)"> block ${t.blockHeight}</span>` : ''}
+        <a href="${wocLink(t.txid)}" target="_blank" style="margin-left:8px">${short(t.txid,8)}</a>
+      </div>`;
+    });
+  }
+  $.innerHTML = h;
+}
+
+function renderList(d) {
+  let h = `<h1>${esc(d.title)}</h1>`;
+  if(d.subtitle) h += `<p class="subtitle">${esc(d.subtitle)}</p>`;
+  h += (d.items||[]).map(i => `<div class="list-row">
+    ${i.image ? `<img src="${esc(i.image)}" alt="">` : ''}
+    <div class="meta"><div>${esc(i.label)}</div><div class="dim">${esc(i.value)}</div>${i.extra?`<div class="dim">${esc(i.extra)}</div>`:''}</div>
+  </div>`).join('');
+  $.innerHTML = h;
+}
+
+function renderTable(d) {
+  let h = `<h1>${esc(d.title)}</h1>`;
+  if(d.subtitle) h += `<p class="subtitle">${esc(d.subtitle)}</p>`;
+  h += `<table><thead><tr>${(d.headers||[]).map(h=>`<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>`;
+  (d.rows||[]).forEach(r => { h += `<tr>${r.map(c=>`<td>${esc(c)}</td>`).join('')}</tr>`; });
+  h += `</tbody></table>`;
+  $.innerHTML = h;
+}
+
+const renderers = { grid: renderGrid, detail: renderDetail, list: renderList, table: renderTable };
+(renderers[DATA.view] || renderGrid)(DATA);
+</script>
+</body>
+</html>

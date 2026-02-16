@@ -1,0 +1,31 @@
+# Rexxie Trait Catalog
+
+6 trait types, 298 unique values across 2,222 NFTs.
+
+## Background (6)
+Purple (386), Blue (385), Orange (365), Red (363), Teal (362), Green (361)
+
+## Base (32)
+Petrified (86), Genesis Brown (85), Mutant Grey (84), Dotted Pink (84), Stripped Yellow (79), Dragon White (79), Genesis Purple (77), Stripped Blue (76), Mutant Purple (74), Dotted Blue (73), Genesis Red (72), Hybrid Green (71), Imperial White (71), Genesis Green (71), Mutant Green (70), Imperial Blue (70), Alien (69), Stripped (68), Genesis Orange (68), Genesis Blue (67), Hybrid Red (66), Stripped Red (66), Dotted Green (65), Dragon Orange (65), Dotted Purple (63), Hybrid Purple (62), Imperial Red (61), Dragon Gold (59), Mecha (58), Dragon Black (55), Stripped Purple (54), Hybrid Blue (54)
+
+## Body (114)
+Button Shirt Purple (30), Prison Jumpsuit Orange (29), Tatoo (28), Shirt Green (26), Lumberjack Shirt Blue (26), Two Tone Hoodie (26), Chef Suit (26), Ziggy Shirt (26), Lumberjack Shirt Red (25), Shirt Blue (25), V Cut Tee (25), Tactical Vest (25), Obsidian Armor (25), Body Wrap Blue (24), Pilot Shirt (24), Epaulette (24), Cowboy Suit (24), Cardigan Green (24), Polka Shirt Teal (23), Overalls (23), Priest Robe (23), Beach Shirt Blue (23), Clown Suit (23), Ninja (22), Kungfu Suit (22), Suit And Tie Black (22), Cyborg Armor (22), Fur Coat (22), Karate Gi (22), Race Track Suit Red (21), Stripped Shirt Green (21), Centurion (21), Tuxedo (21), Fire Fighter Suit (21), Alien Suit (21), Scout Armor (21), Cryo Armor (21), Steampunk Suit (21), Race Track Suit Grey (21), Knight Armor (21), Cape Green (21), Casual Suit (20), Lab Coat (20), Punk Jacket (20), Polka Shirt (20), Exo Armor (20), Blank (20), Pirate Suit (20), Cardigan Blue (20), Turtleneck Blue (20), Cardigan Yellow (20), Button Shirt Orange (20), Wgmi Shirt (20), Pump Jacket Orange (20), Two Tone Shirt (20), Prison Jumpsuit Red (20), Sailor Uniform (20), Body Wrap Red (20), Blazer (19), Beach Shirt Green (19), Shirt And Tie (19), Shirt Yellow (19), Devil Suit (19), Body Wrap Yellow (19), Wizard Robe (19), Vader Suit (19), Skeleton Shirt (19), King Robe (19), Tank Top Blue (19), Trench Coat (18), Angel Suit (18), Button Shirt Pink (18), Hoodie Red (18), Biker Jacket (18), Cape Red (18), Clergy Shirt (18), Admiral Coat (18), Casual Vest (18), Bio Suit (18), Hoodie Blue (18), Mercenary Suit (18), Raincoat Blue (17), Samurai Armor (17), Roman Toga (17), Astro Suit (17), Shirt Red (17), Varsity Jacket (17), Body Armor (17), Polka Shirt Purple (17), Pump Jacket Red (17), Rainbow Shirt (16), Tropper Armor (16), Beach Shirt Purple (16), Tank Top With Inner Shirt (16), Tweed Jacket (16), Raincoat Yellow (16), Beach Shirt Red (16), Stripped Shirt Purple (15), Pump Jacket Grey (15), Beach Shirt Yellow (15), Cape Blue (15), Shirt Purple (14), Body Wrap Green (14), Pump Jacket Blue (14), Polka Shirt Orange (14), Prison Jumpsuit Green (14), Suit And Tie Blue (14), Tank Top Red (13), Yukata (13), Stripped Shirt Blue (13), Bowtie Suit (13), Cardigan Red (12), Denim Shirt (12), Aviator Jacket (11)
+
+## Eye (16)
+Worried (159), Confused (156), Love (148), Shy (148), Happy (147), Innocent (145), Down (142), Suspicious (142), Angry (140), Shocked (136), Furious (132), Evil (130), Exhausted (128), Dazed (128), Sleepy (120), Hollow (118)
+
+## Mouth (27)
+Happy (98), Party Horn (98), Worried (96), Party Horn Red (92), Handlebar Moustache (92), Jealous (92), Pout (91), Star Mask (88), Angry (87), Tongue Roll (86), Soda (85), Sage Beard (85), Party Horn Gold (85), Grin (83), Shocked (83), Medical Mask (82), Face Bandana (77), Tongue Small (77), Smooch (76), Tongue Big (76), Pipe (74), Cig (73), Dissapointed (72), Party Horn Purple (71), Teeth (70), Unhappy (67), Party Horn Green (66)
+
+## Head (103)
+Ushanka (34), Pirate Bandana (32), Fishing Hat Blue (32), Devil Horns (31), Beret (30), Viking Crown (29), Unicorn (29), Afro (29), Aviator Cap (28), Aviators Orange (28), Detective Cap Blue (28), Paperbag (28), Military Helmet (28), Bandana (28), Punk Hair Green (28), Poop (27), Wizard Hat (27), Chullo (27), Reverse Snapback (27), Wreath (27), Detective Cap Purple (27), Cornette (27), Vr Headset (27), Detective Cap Red (27), Chef Hat (27), Stabbed Head (27), Bowler Hat (26), Cap (26), Fez (26), Headphones (26), Blindfold Red (26), Rain (26), Snek Infestation (25), Sombrero Blue (25), Frog Fren (25), Aviators Green (25), Sport Helmet (25), Pompadour (25), Saucepan (25), Birthdat Hat (25), Undies (24), Headband (24), Sombrero Green (24), Panama Hat (24), Chicken Hat (24), Blindfold Black (24), Fisher Hat (24), Nurse Hat (24), Captain Hat (24), Ice Cream (24), Stripped Fisher Hat (23), Punk Hair Red (23), Sailor Hat (23), Sheriff Hat (23), Sunglasses (23), Mummy (23), Skateboard Helmet (23), Star Glasses (23), Ushanka Black (23), Propeller Cap (23), Scube Mask (23), Baseball Cap Red (23), Pirate Hat (22), Blank (22), Tuque (22), Officer Skull Hat (22), Fishing Hat Orange (22), Aviators Blue (22), Leather Hat (22), Sweatband (22), Sleeping Hat (22), Baseball Cap Blue (22), Fire (21), Hero Mask (21), Bunny Headband (21), Red Hat (21), Cupcake (21), Santa Hat (21), Knitted Hat (21), Claw Machine (20), Dotted Headband (20), Cyclops Visor (19), Night Vission Goggles (19), Safari Hat (18), Sushi (18), Star Magician Hat (18), Sun Visor (17), King Crown (17), Fedora (15), Fishing Hat Red (14), Nacho Cheese (13), Prussian Helmet (13), Medieval Helmet (12)
+
+## Fuzzy Matching Guide
+
+When users describe traits vaguely, reason about which values match:
+- Color queries ("blue body") → match all values containing that color (e.g. "Stripped Blue", "Hybrid Blue", "Genesis Blue", "Imperial Blue", "Dotted Blue")
+- Category queries ("armor") → match values containing "Armor" (Obsidian, Cyborg, Exo, Scout, Cryo, Knight, Samurai, Body, Tropper, Centurion)
+- Mood queries ("happy", "sad") → check Eye and Mouth traits (Happy, Love, Grin = happy; Worried, Unhappy, Dissapointed = sad)
+- Subjective queries ("cute") → combine friendly traits: Love/Innocent/Shy eyes + Grin/Smooch/Happy mouth + colorful bases
+- Style queries ("military") → Military Helmet, Tactical Vest, Centurion, Scout Armor, etc.
+- Party queries → Party Horn variants, Birthdat Hat, Clown Suit
